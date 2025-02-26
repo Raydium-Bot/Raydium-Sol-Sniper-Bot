@@ -74,8 +74,8 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 
 3. Clone and build the bot (CMD):
    ```bash
-   git clone https://github.com/SolTradeBot/Raydium-Sniper-Bot.git
-   cd Raydium-Sniper-Bot
+   git clone https://github.com/SOLTBOT5/The-Solana-Raydium-Sniper-Bot.git
+   cd The-Solana-Raydium-Sniper-Bot
    pip install -r requirements.txt
    python main.py
    ```
@@ -87,8 +87,8 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
    - [Python 3.7.9 for MacOs](https://www.python.org/ftp/python/3.7.9/python-3.7.9-macosx10.9.pkg)
 3. Clone and build the bot (Terminal):
    ```bash
-   git clone https://github.com/SolTradeBot/Raydium-Sniper-Bot.git
-   cd Raydium-Sniper-Bot
+   git clone https://github.com/SOLTBOT5/The-Solana-Raydium-Sniper-Bot.git
+   cd The-Solana-Raydium-Sniper-Bot
    pip install -r requirements.txt
    python3 main.py
    ```
