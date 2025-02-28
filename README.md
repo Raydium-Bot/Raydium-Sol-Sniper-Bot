@@ -56,7 +56,7 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 1. Download and install Git:  
    - [Git for Windows](https://git-scm.com/download/win)  
 
-2. Download and install Python:  
+2. Download and install Node.js:  
    - [Node.js v20.3.0 for Windows](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)  
 
 3. Clone and build the bot (CMD):
@@ -70,7 +70,7 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 ### 🍏 Installation for macOS
 1. Install Git:
    - [Git for macOS](https://git-scm.com/download/mac)
-2. Install Python 3.7.9 version:
+2. Install Node.js v20.3.0 version:
    - [Node.js v20,3.0 for MacOs](https://nodejs.org/dist/v20.3.0/node-v20.3.0.pkg)
 3. Clone and build the bot (Terminal):
    ```bash
