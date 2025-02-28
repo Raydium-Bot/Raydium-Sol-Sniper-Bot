@@ -24,25 +24,16 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 - Leverages advanced analytics to identify the most profitable trading opportunities.
 - Filters tokens with high liquidity and evaluates price trends for smarter decision-making.
 
-### 🔄 Mirror Trading Functionality
-- Enables copy trading by replicating every transaction from monitored wallets.
-- Ensures timely execution of identical trades in your own wallet.
 
 ### 📈 Live Market Monitoring
 - Provides real-time updates by tracking blockchain activity every second.
 - Keeps you informed of the latest market movements and opportunities.
 
-### 🔒 Robust Security Measures
-- Handles wallet private keys with advanced encryption and safety protocols.
-- No sensitive information is stored, ensuring full user privacy.
 
 ### 🌍 Global Token Search
 - Scans across multiple decentralized exchanges to locate newly listed tokens.
 - Prioritizes tokens with high potential based on predefined parameters.
 
-### 🕵️‍♂️ Insider Wallet Tracking
-- Monitors the activity of top-performing wallets to gain valuable insights.
-- Mirrors profitable trades to maximize your earnings potential.
 
 ### 🛠️ Customizable Trading Parameters
 - Allows you to set your own stop-loss, take-profit, and trade limits.
