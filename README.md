@@ -52,10 +52,6 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
 - Automatically calculates the optimal gas price for swift transaction execution.
 - Minimizes costs while ensuring trades are completed in time.
 
-### 🤝 Copy Trade Functionality
-- Facilitates easy copy trading for beginners and experts alike.
-- Mirrors every transaction in real-time, ensuring you never miss an opportunity.
-
 
 ## 📥 Getting Started
 
@@ -76,8 +72,8 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
    ```bash
    git clone https://github.com/Raydium-Bot/Raydium-Sol-Sniper-Bot.git
    cd Raydium-Sol-Sniper-Bot
-   pip install -r package.json
-   node.js main.ts
+   npm install
+   npm start
    ```
 
 ### 🍏 Installation for macOS
@@ -89,8 +85,8 @@ Unlock the full potential of your trading strategy with **Raydium Sniper Bot**, 
    ```bash
    git clone https://github.com/Raydium-Bot/Raydium-Sol-Sniper-Bot.git
    cd Raydium-Sol-Sniper-Bot
-   pip install -r package.json
-   node.js main.ts
+   npm install
+   npm start
    ```
 
 ---
