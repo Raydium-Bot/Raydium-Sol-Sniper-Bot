@@ -24,9 +24,7 @@ import { buy, sell } from "../transaction/transaction";
 import { createPoolKeys } from "../liquidity";
 import { MIN_POOL_SIZE, MAX_POOL_SIZE, RPC_ENDPOINT, MIN_POOL_SIZE_SELL, MAX_POOL_SIZE_SELL,RPC_WEBSOCKET_ENDPOINT} from "../constants";
 import { PoolFilters, PoolFilterArgs } from "../filters";
-import base58 from "bs58";
-import bs58 from "bs58";
-import BN from "bn.js";
+
 function slotExists(slot: number): boolean {
   return true
 }
