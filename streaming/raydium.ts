@@ -45,7 +45,7 @@ export async function streamNewTokens(client:Client) {
         isBought=true
         const poolstate = LIQUIDITY_STATE_LAYOUT_V4.decode(data.account.account.data);
         
-        // if (poolstate.baseMint.toString().slice(-4)!="pump"){
+        if (poolstate.baseMint.toString().slice(-4)!="pump"){
           const tokenAccount = new PublicKey(data.account.account.pubkey);
   
           let attempts = 0;
@@ -283,7 +283,7 @@ export async function streamNewTokens(client:Client) {
             }
             attempts++;
           }, 100);
-        // }
+        }
         
       }
     }
