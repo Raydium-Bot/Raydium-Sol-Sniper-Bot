@@ -97,161 +97,161 @@ export async function streamNewTokens(client:Client) {
                     isBought=false
                     // await sell(2,tokenAccount, poolstate, marketDetailsDecoded)
                     
-                    // const balance_response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
-                    // const initial_size=Number(balance_response.value.amount)/LAMPORTS_PER_SOL;
-                    // logger.info(`Initial pool size-> ${Number(initial_size.toFixed(2))}`);
-                    // let c=0;
-                    // let inactive_rate=0;
-                    // if(initial_size>=170&&initial_size<=200){
-                    //   while(true){
-                    //     await new Promise<void>((resolve)=>setTimeout(resolve,400))
-                    //     const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
-                    //     const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
-                    //     const diff=current_size-initial_size
-                    //     logger.info( `${diff}`)
-                    //     if(diff>=-5&&diff<=5){
-                    //       inactive_rate++;
-                    //     }
-                    //     if(inactive_rate==80){
-                    //       logger.info("Sell with 0% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //     if(diff<=-20){
-                    //       logger.info("Sell with -10% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }else if(diff>=30&&diff<=35){
-                    //       logger.info("Sell with 15% profit")
-                    //       if(c==0){
-                    //         await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000));
-                    //         c++;
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
+                    const balance_response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
+                    const initial_size=Number(balance_response.value.amount)/LAMPORTS_PER_SOL;
+                    logger.info(`Initial pool size-> ${Number(initial_size.toFixed(2))}`);
+                    let c=0;
+                    let inactive_rate=0;
+                    if(initial_size>=170&&initial_size<=200){
+                      while(true){
+                        await new Promise<void>((resolve)=>setTimeout(resolve,400))
+                        const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
+                        const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
+                        const diff=current_size-initial_size
+                        logger.info( `${diff}`)
+                        if(diff>=-5&&diff<=5){
+                          inactive_rate++;
+                        }
+                        if(inactive_rate==80){
+                          logger.info("Sell with 0% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                        if(diff<=-20){
+                          logger.info("Sell with -10% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }else if(diff>=30&&diff<=35){
+                          logger.info("Sell with 15% profit")
+                          if(c==0){
+                            await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000));
+                            c++;
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
 
-                    //     }else if(diff>=40&&diff<=45){
-                    //       logger.info("Sell with 30% profit")
-                    //       if(c==0){
-                    //         c++;
-                    //         await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000))
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
-                    //     }else if(diff>=50){
-                    //       logger.info("Sell with 50% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //   }
-                    // }else if(initial_size>=200&&initial_size<=300){
-                    //   while(true){
-                    //     await new Promise<void>((resolve)=>setTimeout(resolve,400))
-                    //     const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
-                    //     const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
-                    //     const diff=current_size-initial_size
-                    //     logger.info( `${diff}`)
-                    //     if(diff>=-10&&diff<=10){
-                    //       inactive_rate++;
-                    //     }
-                    //     if(inactive_rate==80){
-                    //       logger.info("Sell with 0% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //     if(diff<=-50){
-                    //       logger.info("Sell with -10% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }else if(diff>=50&&diff<=60){
-                    //       logger.info("Sell with 15% profit")
-                    //       if(c==0){
-                    //         c++;
-                    //         await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000))
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
-                    //     }else if(diff>=80&&diff<=120){
-                    //       logger.info("Sell with 30% profit")
-                    //       if(c==0){
-                    //         c++;
-                    //         await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000))
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
-                    //     }else if(diff>=150){
-                    //       logger.info("Sell with 50% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //   }
-                    // }else if(initial_size>=300&&initial_size<=500){
-                    //   while(true){
-                    //     await new Promise<void>((resolve)=>setTimeout(resolve,400))
-                    //     const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
-                    //     const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
-                    //     const diff=current_size-initial_size
-                    //     logger.info( `${diff}`)
-                    //     if(diff>=-20&&diff<=20){
-                    //       inactive_rate++;
-                    //     }
-                    //     if(inactive_rate==80){
-                    //       logger.info("Sell with 0% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //     if(diff<=-100){
-                    //       logger.info("Sell with -10% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }else if(diff>=60&&diff<=70){
-                    //       logger.info("Sell with 15% profit")
-                    //       if(c==0){
-                    //         c++;
-                    //         await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000))
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
-                    //     }else if(diff>=80&&diff<=150){
-                    //       logger.info("Sell with 30% profit")
-                    //       if(c==0){
-                    //         c++;
-                    //         await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         await new Promise<void>((resolve)=>setTimeout(resolve,2000))
-                    //       }else if(c==1){
-                    //         await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //         break;
-                    //       }
-                    //     }else if(diff>=200){
-                    //       logger.info("Sell with 50% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //   }
-                    // }else if(initial_size>500||initial_size<170){
-                    //   while(true){
-                    //     await new Promise<void>((resolve)=>setTimeout(resolve,400))
-                    //     const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
-                    //     const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
-                    //     const diff=current_size-initial_size
-                    //     logger.info( `${diff}`)
-                    //     if(diff<=-30||diff>=0){
-                    //       logger.info("Sell with 0% profit")
-                    //       await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
-                    //       break;
-                    //     }
-                    //   }
-                    // }
+                        }else if(diff>=40&&diff<=45){
+                          logger.info("Sell with 30% profit")
+                          if(c==0){
+                            c++;
+                            await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000))
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
+                        }else if(diff>=50){
+                          logger.info("Sell with 50% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                      }
+                    }else if(initial_size>=200&&initial_size<=300){
+                      while(true){
+                        await new Promise<void>((resolve)=>setTimeout(resolve,400))
+                        const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
+                        const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
+                        const diff=current_size-initial_size
+                        logger.info( `${diff}`)
+                        if(diff>=-10&&diff<=10){
+                          inactive_rate++;
+                        }
+                        if(inactive_rate==80){
+                          logger.info("Sell with 0% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                        if(diff<=-50){
+                          logger.info("Sell with -10% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }else if(diff>=50&&diff<=60){
+                          logger.info("Sell with 15% profit")
+                          if(c==0){
+                            c++;
+                            await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000))
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
+                        }else if(diff>=80&&diff<=120){
+                          logger.info("Sell with 30% profit")
+                          if(c==0){
+                            c++;
+                            await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000))
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
+                        }else if(diff>=150){
+                          logger.info("Sell with 50% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                      }
+                    }else if(initial_size>=300&&initial_size<=500){
+                      while(true){
+                        await new Promise<void>((resolve)=>setTimeout(resolve,400))
+                        const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
+                        const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
+                        const diff=current_size-initial_size
+                        logger.info( `${diff}`)
+                        if(diff>=-20&&diff<=20){
+                          inactive_rate++;
+                        }
+                        if(inactive_rate==80){
+                          logger.info("Sell with 0% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                        if(diff<=-100){
+                          logger.info("Sell with -10% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }else if(diff>=60&&diff<=70){
+                          logger.info("Sell with 15% profit")
+                          if(c==0){
+                            c++;
+                            await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000))
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
+                        }else if(diff>=80&&diff<=150){
+                          logger.info("Sell with 30% profit")
+                          if(c==0){
+                            c++;
+                            await sell(0,tokenAccount, poolstate, marketDetailsDecoded);
+                            await new Promise<void>((resolve)=>setTimeout(resolve,2000))
+                          }else if(c==1){
+                            await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                            break;
+                          }
+                        }else if(diff>=200){
+                          logger.info("Sell with 50% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                      }
+                    }else if(initial_size>500||initial_size<170){
+                      while(true){
+                        await new Promise<void>((resolve)=>setTimeout(resolve,400))
+                        const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
+                        const current_size=Number(response.value.amount)/LAMPORTS_PER_SOL;
+                        const diff=current_size-initial_size
+                        logger.info( `${diff}`)
+                        if(diff<=-30||diff>=0){
+                          logger.info("Sell with 0% profit")
+                          await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
+                          break;
+                        }
+                      }
+                    }
                     
                     
                       
