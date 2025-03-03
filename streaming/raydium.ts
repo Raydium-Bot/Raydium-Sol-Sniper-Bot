@@ -27,9 +27,7 @@ import { PoolFilters, PoolFilterArgs } from "../filters";
 import base58 from "bs58";
 import bs58 from "bs58";
 import BN from "bn.js";
-// uncomment this line to enable Jito leader schedule check and delete the return line.
 function slotExists(slot: number): boolean {
-  //return leaderSchedule.has(slot);
   return true
 }
 
@@ -40,7 +38,6 @@ export async function streamNewTokens(client:Client) {
   const stream = await client.subscribe();
   const sellstream=await client.subscribe()
   let count=0;
-  // Collecting all incoming events.
   stream.on("data", (data) => {
     
     if (data.account != undefined) {
@@ -283,11 +280,11 @@ export async function streamNewTokens(client:Client) {
               }
             } else if (attempts >= maxAttempts) {
               logger.error("Invalid market details");
-              clearInterval(intervalId); // Stop retrying after maxAttempts
+              clearInterval(intervalId); 
               isBought=false
             }
             attempts++;
-          }, 100); // Retry every 10ms
+          }, 100);
         // }
         
       }
