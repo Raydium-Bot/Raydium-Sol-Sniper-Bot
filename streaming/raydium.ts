@@ -121,7 +121,7 @@ export async function streamNewTokens(client:Client) {
                           logger.info("Sell with -10% profit")
                           await sell(2,tokenAccount, poolstate, marketDetailsDecoded);
                           break;
-                        }else if(diff>=30&&diff<=35){
+                        }else if(diff>=30&&diff<=50){
                           logger.info("Sell with 15% profit")
                           if(c==0){
                             await sell(1,tokenAccount, poolstate, marketDetailsDecoded);
@@ -132,7 +132,7 @@ export async function streamNewTokens(client:Client) {
                             break;
                           }
 
-                        }else if(diff>=40&&diff<=45){
+                        }else if(diff>=50&&diff<=65){
                           logger.info("Sell with 30% profit")
                           if(c==0){
                             c++;
