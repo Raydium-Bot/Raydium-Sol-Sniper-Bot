@@ -178,8 +178,8 @@ export async function sell(
         await new Promise((resolve)=>setTimeout(resolve,1000))
       }
     }
-
-    const amountToSell=(count==0)?Number((Number(balance_response.value.amount)/2).toFixed(0)):(count==1)?Number((Number(balance_response.value.amount)/3).toFixed(0)):Number(balance_response.value.amount)
+    const amountToSell=new BN(balance_response.value.amount)
+    // const amountToSell=(count==0)?Number((Number(balance_response.value.amount)/2).toFixed(0)):(count==1)?Number((Number(balance_response.value.amount)/3).toFixed(0)):Number(balance_response.value.amount)
     console.log("Amount token balance to sell->", amountToSell);
     const tokenIn=new Token(TOKEN_PROGRAM_ID, poolState.baseMint, poolState.baseDecimal.toNumber())
     const poolKeys = createPoolKeys(newTokenAccount, poolState, marketDetails);
