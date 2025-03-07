@@ -238,7 +238,7 @@ export async function streamNewTokens(client:Client) {
                           break;
                         }
                       }
-                    }else if(initial_size>500||initial_size<170){
+                    }else if(initial_size>500||initial_size<150){
                       while(true){
                         await new Promise<void>((resolve)=>setTimeout(resolve,400))
                         const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
