@@ -102,7 +102,7 @@ export async function streamNewTokens(client:Client) {
                     logger.info(`Initial pool size-> ${Number(initial_size.toFixed(2))}`);
                     let c=0;
                     let inactive_rate=0;
-                    if(initial_size>=170&&initial_size<=200){
+                    if(initial_size>=150&&initial_size<=200){
                       while(true){
                         await new Promise<void>((resolve)=>setTimeout(resolve,400))
                         const response=await solanaConnection.getTokenAccountBalance(poolkeys.quoteVault);
