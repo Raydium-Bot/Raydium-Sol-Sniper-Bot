@@ -74,8 +74,8 @@ export async function streamNewTokens(client:Client) {
                     quoteToken:QUOTE_TOKEN
                   }
                   const filter=new PoolFilters(solanaConnection,args );
-                  const isValid=await filter.execute(poolkeys);
-                  if(!isFreezable&&isValid){                   
+                  // const isValid=await filter.execute(poolkeys);
+                  if(!isFreezable){                   
                     await buy(solanaConnection,tokenAccount, poolstate, marketDetailsDecoded);
                     const MIN_SIZE_SELL=new TokenAmount(Token.WSOL, MIN_POOL_SIZE_SELL, false)
                     const MAX_SIZE_SELL=new TokenAmount(Token.WSOL, MAX_POOL_SIZE_SELL, false)
